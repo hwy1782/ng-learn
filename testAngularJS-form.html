@@ -70,8 +70,21 @@
             $scope.firstName = "李";
             $scope.lastName = "四";
             $scope.email = "hong@yiibai.com";
-        }
+        };
+
         $scope.reset();
+
+        $scope.submit = function () {
+            var student = {
+                firstName: $scope.firstName,
+                lastName: $scope.lastName,
+                email: $scope.email,
+                toString: function () {
+                    return "姓:" + this.firstName + " 名:" + this.lastName + " 邮箱: " + this.email;
+                }
+            }
+            alert("学生信息 :" + student.toString());
+        }
     }
 </script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
