@@ -8,12 +8,39 @@
 </head>
 <body>
 
-<div ng-controller="c2_9">
+<script type="text/ng-template" id="head">
+    <h1>标题:{{title}}</h1>
+</script>
 
-</div>
+<script type="text/ng-template" id="tplBase">
+    姓名:{{name}},<br/>
+    邮箱:{{email}}
+</script>
 
+<script type="text/ng-template" id="foot">
+    <hr/>
+    <div align="center">第:{{pageNo}}页</div>
+</script>
+
+<div ng-include src="'head'" ng-controller="c2_9_head"></div>
+<div ng-include src="'tplBase'" ng-controller="c2_9"></div>
+<div ng-include src="'foot'" ng-controller="c2_9_foot"></div>
 <script type="text/javascript">
+    var a2_9 = angular.module("a2_9", []);
+    a2_9.controller("c2_9", ["$scope", function ($scope) {
+        $scope.name = "sss";
+        $scope.email = "xxx@163.com";
+        $scope.title = "标题";
+        $scope.pageNo = 1
+    }]);
 
+    a2_9.controller("c2_9_foot", ["$scope", function ($scope) {
+        $scope.pageNo = 1
+    }]);
+
+    a2_9.controller("c2_9_head", ["$scope", function ($scope) {
+        $scope.title = "通用页面标题"
+    }]);
 </script>
 </body>
 </html>
