@@ -13,6 +13,11 @@
 </div>
 
 <script type="text/javascript">
+//    该表达式具有很好的容错性，允许使用未定义或空值表达式，因此，浏览器的控制台并没有异常信息显示。
+
+// 在实际使用Angular工具开发应用时，如果在页面中使用表达式，不能将逻辑性的判断语句或循环语句写入表达式中，
+// 因为在Angular中，这类页面的应用逻辑必须写在管理页面的控制器代码中，而不是直接写在页面的表达式中，
+// 这点需要在使用Angular表达式时注意。
     function c2_3($scope) {
         $scope.tmp = "xxx";
         $scope.error = function () {

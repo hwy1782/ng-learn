@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--首先定义了一个名为“a2_4”的Angular模块-->
+<html lang="en" ng-app="a2_5">
+<head>
+    <meta charset="UTF-8">
+    <title>通过表达式绑定$scope对象的方法</title>
+    <script src="http://cdn.staticfile.org/angular.js/1.2.5/angular.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div ng-controller="c2_5">
+    <span>{{span_show()}}</span>
+</div>
+
+<script type="text/javascript">
+    var a2_5 = angular.module('a2_5', []);
+    a2_5.controller("c2_5", ['$scope', function ($scope) {
+        $scope.text = "hello angular";
+        $scope.span_show = function () {
+            $scope.text = "你好,世界";
+            return $scope.text;
+        }
+    }])
+</script>
+</body>
+</html>
