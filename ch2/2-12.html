@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--首先定义了一个名为“a2_4”的Angular模块-->
+<html lang="en" ng-app="a2_12">
+<head>
+    <meta charset="UTF-8">
+    <title>控制元素显示和隐藏的状态</title>
+    <script src="http://cdn.staticfile.org/angular.js/1.2.5/angular.js" type="text/javascript"></script>
+</head>
+
+<style type="text/css">
+    body {
+        font-size: 12px;
+    }
+
+    ul {
+        list-style-type: none;
+        width: 400px;
+        margin: 0px;
+        padding: 0px
+    }
+
+    div {
+        margin: 8px 0px;
+    }
+</style>
+
+
+<body>
+<div ng-controller="c2_12">
+    <div ng-show="true">xxx</div>
+    <div ng-hide={{isHiden}}>xxx@163.com</div>
+    <ul ng-switch on={{switch}}>
+        <li ng-switch-when="1">xxx</li>
+        <li ng-switch-when="2">xxx@163.com</li>
+        <li ng-switch-default>more...</li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    var a2_12 = angular.module("a2_12", []);
+    a2_12.controller("c2_12", ["$scope", function ($scope) {
+        $scope.isHiden = true;
+        $scope.switch = 2;
+    }]);
+</script>
+</body>
+</html>
